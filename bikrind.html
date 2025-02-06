@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIKRIND</title>
+    <link rel="icon" href="bikrind.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(247, 247, 237);
+        }
+        header {
+            
+            background: #002366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .header img {
+         height: 2px;
+         width: 2px;
+        }
+
+        .logo{
+            text-align: left;
+        }
+        nav ul {
+            text-align: center;
+             list-style: none;
+             padding: 0;
+             display: flex;
+             gap: 10px;
+            }
+
+        nav ul li {
+             margin: 0;
+             text-align: center;
+             
+             }
+
+        .nav-button {
+            text-align: center;
+            background-color: #396b9f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            }   
+
+    .nav-button:hover {
+        background-color: #edf0f4;
+        color: #396b9f;
+
+    }
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .exchange-rates, .news {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .exchange-rates:hover{
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        
+        .table-container {
+            height: 300px; /* Fixed height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #ddd; /* Optional: add border */
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+            }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .latest-news {
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -193px;
+    left: 45px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    font-family: Arial, sans-serif;
+}
+
+.latest-news:hover{
+            transform: scale(1.03);
+                    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+.latest-news h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.latest-news ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.latest-news li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.4s ease-in-out;
+}
+
+.latest-news li:last-child {
+    border-bottom: none;
+}
+
+.latest-news a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.latest-news li:hover {
+    transform: scale(1.03);
+                    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+      
+        /* General Section Styling */
+        section {
+                margin: 20px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                background: #fff;
+                transition: transform 0.3s ease-in-out;
+                }
+
+        /* Grid Layout */
+        .services-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                 gap: 20px;
+                 padding: 20 px;
+                }
+        .service {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+                }
+
+        .service:hover {
+                    transform: scale(1.05);
+                }
+
+        .service img {
+                    width: 140px;  /* Adjust size as needed */
+                    height: 110px;
+                    margin-bottom: 10px;
+                }
+
+        .exchange-rates{
+                    height: 360px;
+                        }
+        /* .news{
+                    height: 100px;
+                    width: 300px;
+                        } */
+
+                        /* Headings */
+        h2 {
+                    text-align: center;
+                    font-size: 24px;
+                    color: #333;
+                    margin-bottom: 10px;
+            }
+
+        /* Individual Service Blocks */
+        article {
+                    padding: 15px;
+                    background: #f8f8f8;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+
+                        /* Hover Effects */
+        section:hover {
+                    transform: scale(1.03);
+                    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+                    background-color: #002366;
+                    text-decoration-color: #ddd;
+                }
+        
+
+        /* Responsive Design */
+                @media (max-width: 768px) {
+        .services-container {
+                grid-template-columns: 1fr;
+                }
+                }
+                .chart-container {
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #002366;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <img src="bikrind.png" alt="LOGO"> -->
+        <div class="logo"><h1>BIKRIND MONEY EXCHANGE</h1></div>
+        <nav>
+            <ul>
+                <li><button onclick="location.href='bikrind.html'" class="nav-button">Kryefaqja</button></li>
+                <li><button onclick="location.href='bikrind1.html'" class="nav-button">Konverto</button></li>
+                <li><button onclick="location.href='bikrind2.html'" class="nav-button">Kontakto</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="exchange-rates">
+            <h2>Exchange Rates</h2>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Monedha</th>
+                        <th>Blihet</th>
+                        <th>Shitet</th>
+                    </tr>
+                    <tr><td>USD</td><td>94.7</td><td>96.3</td></tr>
+                    <tr><td>EUR</td><td>99.3</td><td>99.5</td></tr>
+                    <tr><td>CHF</td><td>104.3</td><td>105.5</td></tr>
+                    <tr><td>GBP</td><td>118</td><td>119.3</td></tr>
+                    <tr><td>DKK</td><td>10.01</td><td>12.02</td></tr>
+                    <tr><td>NOK</td><td>6.66</td><td>7.59</td></tr>
+                    <tr><td>SEK</td><td>7</td><td>7.95</td></tr>
+                    <tr><td>CAD</td><td>65.8</td><td>67</td></tr>
+                    <tr><td>AUD</td><td>58.6</td><td>60</td></tr>
+                    <tr><td>JPY</td><td>0.6</td><td>0.63</td></tr>
+                    <tr><td>TRY</td><td>2.58</td><td>2.71</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="latest-news">
+            <h2>Shqiperia sot</h2>
+            <ul>
+                <li><a href="https://edition.cnn.com/markets" target="_blank">📈 Stock Market Update</a></li>
+                <li><a href="https://www.coinbase.com/explore" target="_blank">💰 Crypto Trends</a></li>
+                <li><a href="https://www.forex.com/en/" target="_blank">🌍 Forex News</a></li>
+                <li><a href="https://www.bankofalbania.org" target="_blank">🏦 Banking Regulations</a></li>
+            </ul>
+        </div>
+        
+        
+    
+        <div class="services-container">
+        
+        <section class="service">
+            <img src="moneygram.jpg" alt="MoneyGram Logo">
+            <article>
+                <h3>MoneyGram</h3>
+                <p>Dergo para kudo ne bote me MoneyGram me komisionet me ulta.</p>
+            </article>
+        </section>   
+
+        <section class="service">
+            <img src="ereja.png" alt="MoneyGram Logo">  
+            <article>
+                <h3>eReja</h3>
+                <p>Dergesa parash kudo brenda Shqiperise me komisionet me ulta ne treg.</p>
+            </article>
+        </section> 
+
+        <section class="service">
+            <img src="trak.jpg" alt="MoneyGram Logo">  
+            <article>
+                <h3>TRAK </h3>
+                <p>Dergesa parash kudo brenda Shqiperise me komisionet me ulta ne treg. </p>
+            </article>
+        </section> 
+        
+        <section class="service">
+            <img src="dhl.svg" alt="MoneyGram Logo">
+            <article>
+                <h3>DHL</h3>
+                <p>Kryerja e dergesave me ane te postes se njohur DHL.
+                   Dergo lehtesisht pakon tende kudo neper bote me standartet me larta te ofruara nga DHL.</p>
+            </article>
+        </section>
+
+        <section class="service">
+            <img src="oshee.jpg" alt="Drita Logo">
+            <article>
+                <h3>Fatura utilitare </h3>
+                <p>Paguaj faturat e dritave dhe ujit prane agjensise sone pa komision
+                    dhe pa patur nevoje te prisni ne rradhe te gjata.</p>
+            </article>
+        </section>
+
+        <section class="service">
+            <img src="gjoba.jpg" alt="Drita Logo">
+            <article>
+                <h3>Gjoba </h3>
+                <p>Paguaj faturat e gjobave te automjeteve prane agjensise sone pa komision
+                    dhe pa patur nevoje te prisni ne rradhe te gjata.</p>
+            </article>
+        </section>
+         
+           
+        <section class="service">
+            <img src="vodafone.jpg" alt="MoneyGram Logo">
+            <article>
+                <h3>Sherbime Vodafone </h3>
+                <p>Kryej te gjitha sherbimet Vodafone prane nesh pa komision dhe evito rradhet e gjata.</p>
+            </article>
+        </section>
+            
+        <section class="service">
+            <img src="one.jpg" alt="MoneyGram Logo">
+            <article>
+                <h3>Sherbime ONE </h3>
+                <p>Kryej te gjitha sherbimet ONE prane nesh pa komision dhe evito rradhet e gjata.</p>
+            </article>
+        </section>    
+        
+        <section class="service">
+            <img src="intersig.png" alt="MoneyGram Logo">
+            <article>
+                <h3>Siguracione </h3>
+                <p>Siguro shendetin, pronen apo automjetin tek ne me cmimet me konkurruese ne treg.</p>
+            </article>
+        </section>
+
+        <section class="service">
+            <img src="avioni.png" alt="MoneyGram Logo">
+            <article>
+                <h3>Bileta avioni apo autobusi </h3>
+                <p>Prit bileten tende kudo neper bote prane agjensise tone me cmimet me ulta me kompanite WizzAir, RyanAir dhe shume te tjera.</p>
+            </article>
+        </section>   
+
+        <section class="service">
+            <img src="e-albania.jpg" alt="MoneyGram Logo">  
+            <article>
+                <h3>Sherbime e-albania </h3>
+                <p>Kryej te gjitha sherbimet e-albania prane agjensise tone pa patur nevoje te qendroni ne rradhe.</p>
+            </article>
+        </section>   
+
+        <section class="service">
+            <img src="digitalb.png" alt="MoneyGram Logo">  
+            <article>
+                <h3>DigitAlb </h3>
+                <p>Kryej te gjitha sherbimet DigitAlb prane agjensise tone pa patur nevoje te qendroni ne rradhe.</p>
+            </article>
+        </section>
+    </div>
+    
+
+    </main>
+    <footer>
+        <h3>EXCHANGE WITH US</h3>
+    </footer>
+    <script src>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const newsArticles = document.querySelectorAll(".news article");
+            newsArticles.forEach(article => {
+                article.addEventListener("click", () => {
+                    alert("More details coming soon!");
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>

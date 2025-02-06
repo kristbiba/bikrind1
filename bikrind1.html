@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIKRIND</title>
+    <link rel="icon" href="bikrind.png" type="image/x-icon">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(247, 247, 237)
+        }
+        header {
+            background: #002366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .logo{
+            text-align: left;
+        }
+        nav ul {
+            text-align: center;
+             list-style: none;
+             padding: 0;
+             display: flex;
+             gap: 10px;
+            }
+
+        nav ul li {
+             margin: 0;
+             text-align: center;
+             }
+
+        .nav-button {
+            text-align: center;
+            background-color: #396b9f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            }   
+
+    .nav-button:hover {
+        background-color: #edf0f4;
+        color: #396b9f;
+    }
+
+        
+
+        .exchange-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin: auto;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buy {
+            background-color: #d9cfc4;
+            color: black;
+        }
+
+        .sell {
+            background-color: #d9cfc4;
+            color: black;
+        }
+
+        .currency-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .currency-table tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .currency-table td {
+            padding: 10px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .currency-table img {
+            width: 20px;
+            height: 15px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .input-box {
+            width: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #eee;
+        }
+
+        .lek-input {
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .active {
+            background-color: #1a237e;
+            color: beige;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #002366;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><h1>BIKRIND MONEY EXCHANGE</h1></div>
+        <nav>
+            <ul>
+                <li><button onclick="location.href='bikrind.html'" class="nav-button">Kryefaqja</button></li>
+                <li><button onclick="location.href='bikrind1.html'" class="nav-button">Konverto</button></li>
+                <li><button onclick="location.href='bikrind2.html'" class="nav-button">Kontakto</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="exchange-container">
+        <div class="buttons">
+            <button id="buyButton" class="buy active">DUA TË BLEJ</button>
+            <button id="sellButton" class="sell">DUA TË SHES</button>
+        </div>
+
+        <table class="currency-table">
+            <tr>
+                <td><img src="albania.png" alt="AL"> LEK</td>
+                <td><input type="number" id="lekInput" class="input-box lek-input" placeholder="Enter amount"></td>
+            </tr>
+            <tr>
+                <td><img src="usa.png" alt="USD"> USD</td>
+                <td><input type="text" id="usd" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="euro.png" alt="EUR"> EUR</td>
+                <td><input type="text" id="eur" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="uk.svg" alt="GBP"> GBP</td>
+                <td><input type="text" id="gbp" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="swiss.webp" alt="CHF"> CHF</td>
+                <td><input type="text" id="chf" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="japan.png" alt="JPY"> JPY</td>
+                <td><input type="text" id="jpy" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="aud.png" alt="AUD"> AUD</td>
+                <td><input type="text" id="aud" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="dkk.webp" alt="DKK"> DKK</td>
+                <td><input type="text" id="dkk" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="nok.webp" alt="NOK"> NOK</td>
+                <td><input type="text" id="nok" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="sek.svg" alt="SEK"> SEK</td>
+                <td><input type="text" id="sek" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="cad.webp" alt="CAD"> CAD</td>
+                <td><input type="text" id="cad" class="input-box" readonly></td>
+            </tr>
+            <tr>
+                <td><img src="try.webp" alt="TRY"> TRY</td>
+                <td><input type="text" id="try" class="input-box" readonly></td>
+            </tr>
+        </table>
+        </div>
+        <footer>
+            <h3>EXCHANGE WITH US</h3>
+        </footer>
+
+    <script>
+        // Buy and Sell exchange rates
+        const exchangeRates = {
+            buy: {
+                USD: 0.0095,
+                EUR: 0.0087,
+                GBP: 0.0075,
+                CHF: 0.0089,
+                JPY: 1.42,
+                AUD: 0.014,
+                DKK: 0.013,
+                NOK: 0.014,
+                SEK: 0.014,
+                CAD: 0.014,
+                TRY :0.014
+            },
+            sell: {
+                USD: 0.0093,
+                EUR: 0.0085,
+                GBP: 0.0073,
+                CHF: 0.0087,
+                JPY: 1.40,
+                AUD: 0.0138,
+                DKK: 0.014,
+                NOK: 0.014,
+                SEK: 0.014,
+                CAD: 0.014,
+                TRY :0.014
+            }
+        };
+
+        let currentMode = "buy"; // Default mode
+
+        function updateExchangeRates() {
+            let lekAmount = parseFloat(document.getElementById("lekInput").value);
+            if (isNaN(lekAmount)) lekAmount = 0;
+
+            let rates = exchangeRates[currentMode]; // Use buy or sell rates
+
+            document.getElementById("usd").value = (lekAmount * rates.USD).toFixed(2);
+            document.getElementById("eur").value = (lekAmount * rates.EUR).toFixed(2);
+            document.getElementById("gbp").value = (lekAmount * rates.GBP).toFixed(2);
+            document.getElementById("chf").value = (lekAmount * rates.CHF).toFixed(2);
+            document.getElementById("jpy").value = (lekAmount * rates.JPY).toFixed(2);
+            document.getElementById("aud").value = (lekAmount * rates.AUD).toFixed(2);
+            document.getElementById("dkk").value = (lekAmount * rates.DKK).toFixed(2);
+            document.getElementById("nok").value = (lekAmount * rates.NOK).toFixed(2);
+            document.getElementById("sek").value = (lekAmount * rates.SEK).toFixed(2);
+            document.getElementById("cad").value = (lekAmount * rates.CAD).toFixed(2);
+            document.getElementById("try").value = (lekAmount * rates.TRY).toFixed(2);
+        }
+
+        // Update rates when input changes
+        document.getElementById("lekInput").addEventListener("input", updateExchangeRates);
+
+        // Buy button functionality
+        document.getElementById("buyButton").addEventListener("click", function() {
+            currentMode = "buy";
+            this.classList.add("active");
+            document.getElementById("sellButton").classList.remove("active");
+            updateExchangeRates();
+        });
+
+        // Sell button functionality
+        document.getElementById("sellButton").addEventListener("click", function() {
+            currentMode = "sell";
+            this.classList.add("active");
+            document.getElementById("buyButton").classList.remove("active");
+            updateExchangeRates();
+        });
+    </script>
+
+</body>
+</html>

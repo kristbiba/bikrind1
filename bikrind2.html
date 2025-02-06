@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIKRIND</title>
+    <link rel="icon" href="bikrind.png" type="image/x-icon">
+</head>
+<style>
+    
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(247, 247, 237)
+        }
+
+    header {
+            margin: 0;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background: #002366;
+            color: white;
+            text-align: center;
+            
+        }
+
+        .logo{
+            text-align: left;
+        }
+        nav ul {
+            text-align: center;
+             list-style: none;
+             padding: 0;
+             display: flex;
+             gap: 10px;
+            }
+
+        nav ul li {
+             margin: 0;
+             text-align: center;
+             }
+
+        .nav-button {
+            text-align: center;
+            background-color: #396b9f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            }   
+
+    .nav-button:hover {
+        background-color: #edf0f4;
+        color: #396b9f;
+    }
+
+    .container {
+    display: grid;
+    place-items: center; /* Centers both horizontally & vertically */
+    height: 70vh;
+                }        
+
+        h2 {
+            color: #1a237e;
+        }
+
+        p {
+            color: #333;
+        }
+
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #f5f5ff;
+        }
+
+        button {
+            place-items: center;
+            background-color: #396b9f;
+            color: white;
+            border: thick;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #edf0f4;
+            color: #396b9f;
+            border: #396b9f;
+        }
+        ul li {
+            list-style-type: none;
+            margin-bottom: 10px;  /* Adjust this value to change the space between items */
+            }
+
+    footer {
+            text-align: center;
+            padding: 20px;
+            background: #002366;
+            color: white;
+            margin-top: 20px;
+        }
+</style>
+<body>
+    <header>
+        <div class="logo"><h1>BIKRIND MONEY EXCHANGE</h1></div>
+        <nav>
+            <ul>
+                <li><button onclick="location.href='bikrind.html'" class="nav-button">Kryefaqja</button></li>
+                <li><button onclick="location.href='bikrind1.html'" class="nav-button">Konverto</button></li>
+                <li><button onclick="location.href='bikrind2.html'" class="nav-button">Kontakto</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Kontakto</h2>
+        <p><strong>E-mail: bikrind@gmail.com</strong></p>
+        <p>Telefon: +355672012331</p>
+        
+        <form>
+        <ul> 
+            <li><input type="text" placeholder="NAME" required></li>
+            <li><input type="email" placeholder="EMAIL" required></li>
+            <li><input type="text" placeholder="MESSAGE" rows="4" required></li>
+            <li><button class="button" type="submit">SEND</button></li>
+        </ul>
+           
+        </form>
+    </div>
+</body>
+<footer>
+<h3>EXCHANGE WITH US</h3>
+</footer>
+</html>
