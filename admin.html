@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Update Exchange Rates</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+</head>
+<body>
+    <h2>Update Exchange Rates</h2>
+
+    <form id="exchangeRatesForm">
+        <div>
+            <label>USD - Blihet:</label>
+            <input type="number" id="usd_buy">
+            <label>USD - Shitet:</label>
+            <input type="number" id="usd_sell">
+        </div>
+
+        <div>
+            <label>EUR - Blihet:</label>
+            <input type="number" id="eur_buy">
+            <label>EUR - Shitet:</label>
+            <input type="number" id="eur_sell">
+        </div>
+
+        <div>
+            <label>CHF - Blihet:</label>
+            <input type="number" id="chf_buy">
+            <label>CHF - Shitet:</label>
+            <input type="number" id="chf_sell">
+        </div>
+
+        <div>
+            <label>GBP - Blihet:</label>
+            <input type="number" id="gbp_buy">
+            <label>GBP - Shitet:</label>
+            <input type="number" id="gbp_sell">
+        </div>
+
+        <div>
+            <label>DKK - Blihet:</label>
+            <input type="number" id="dkk_buy">
+            <label>DKK - Shitet:</label>
+            <input type="number" id="dkk_sell">
+        </div>
+
+        <div>
+            <label>NOK - Blihet:</label>
+            <input type="number" id="nok_buy">
+            <label>NOK - Shitet:</label>
+            <input type="number" id="nok_sell">
+        </div>
+
+        <div>
+            <label>SEK - Blihet:</label>
+            <input type="number" id="sek_buy">
+            <label>SEK - Shitet:</label>
+            <input type="number" id="sek_sell">
+        </div>
+
+        <div>
+            <label>CAD - Buying:</label>
+            <input type="number" id="cad_buy">
+            <label>CAD - Shitet:</label>
+            <input type="number" id="cad_sell">
+        </div>
+
+        <div>
+            <label>AUD - Blihet:</label>
+            <input type="number" id="aud_buy">
+            <label>AUD - Shitet:</label>
+            <input type="number" id="aud_sell">
+        </div>
+
+        <div>
+            <label>JPY - Blihet:</label>
+            <input type="number" id="jpy_buy">
+            <label>JPY - Shitet:</label>
+            <input type="number" id="jpy_sell">
+        </div>
+
+        <div>
+            <label>TRY - Blihet:</label>
+            <input type="number" id="try_buy">
+            <label>TRY - Shitet:</label>
+            <input type="number" id="try_sell">
+        </div>
+        <button type="submit">Update Rates</button>
+    </form>
+
+    <script src="admin.js">
+        import "./firebase-config.js";
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+        window.location.href = "login.html";
+    }
+});
+
+const database = firebase.database();
+
+document.getElementById("exchangeRatesForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form from reloading the page
+
+    const exchangeRates = {
+        USD: { buy: parseFloat(document.getElementById("usd_buy").value), sell: parseFloat(document.getElementById("usd_sell").value) },
+        EUR: { buy: parseFloat(document.getElementById("eur_buy").value), sell: parseFloat(document.getElementById("eur_sell").value) },
+        CHF: { buy: parseFloat(document.getElementById("chf_buy").value), sell: parseFloat(document.getElementById("chf_sell").value) },
+        GBP: { buy: parseFloat(document.getElementById("gbp_buy").value), sell: parseFloat(document.getElementById("gbp_sell").value) },
+        DKK: { buy: parseFloat(document.getElementById("dkk_buy").value), sell: parseFloat(document.getElementById("dkk_sell").value) },
+        NOK: { buy: parseFloat(document.getElementById("nok_buy").value), sell: parseFloat(document.getElementById("nok_sell").value) },
+        SEK: { buy: parseFloat(document.getElementById("sek_buy").value), sell: parseFloat(document.getElementById("sek_sell").value) },
+        CAD: { buy: parseFloat(document.getElementById("cad_buy").value), sell: parseFloat(document.getElementById("cad_sell").value) },
+        AUD: { buy: parseFloat(document.getElementById("aud_buy").value), sell: parseFloat(document.getElementById("aud_sell").value) },
+        JPY: { buy: parseFloat(document.getElementById("jpy_buy").value), sell: parseFloat(document.getElementById("jpy_sell").value) },
+        TRY: { buy: parseFloat(document.getElementById("try_buy").value), sell: parseFloat(document.getElementById("try_sell").value) },
+    };
+
+    database.ref("exchangeRates").set(exchangeRates)
+        .then(() => {
+            alert("Exchange rates updated successfully!");
+        })
+        .catch((error) => {
+            alert("Error updating rates: " + error.message);
+        });
+});
+    </script> <!-- JavaScript file for Firebase logic -->
+</body>
+</html>

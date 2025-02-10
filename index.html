@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="styles.css">
     <style>
+         
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -236,20 +238,6 @@
         
 
         /* Responsive Design */
-                @media (max-width: 768px) {
-        .services-container {
-                grid-template-columns: 1fr;
-                }
-                }
-                .chart-container {
-            width: 80%;
-            max-width: 600px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
         footer {
             text-align: center;
             padding: 20px;
@@ -257,6 +245,7 @@
             color: white;
             margin-top: 20px;
         }
+    
     </style>
 </head>
 <body>
@@ -299,9 +288,9 @@
         <div class="latest-news">
             <h2>Shqiperia sot</h2>
             <ul>
-                <li><a href="https://www.syri.net/ekonomi/" target="_blank">📈Tregu i monedhave sot</a></li>
+                <li><a href="https://www.syri.net/ekonomi/760947/banka-qendrore-evropiane-evropa-mund-te-jete-nje-humbese-ne-luften-tregtare-shba-kine/" target="_blank">📈Tregu i monedhave sot</a></li>
                 <li><a href="https://www.balkanweb.com/kategoria/shqiperia/ekonomi/#gsc.tab=0" target="_blank">💰Ekonomi</a></li>
-                <li><a href="https://www.forex.com/en/" target="_blank">🌍 Forex</a></li>
+                <li><a href="https://www.netdania.com/currencies/eur-usd" target="_blank">🌍 NetDania</a></li>
                 <li><a href="https://www.bankofalbania.org" target="_blank">🏦 Banka e Shqiperise</a></li>
             </ul>
         </div>
@@ -426,7 +415,38 @@
                 });
             });
         });
+        //databaza Firebase per te ndryshuar vlerat e exchange rates 
+
+        import { getDatabase, ref, onValue } from "firebase/database";
+
+            const db = getDatabase();
+            const ratesRef = ref(db, 'exchangeRates');
+
+        onValue(ratesRef, (snapshot) => {
+            const data = snapshot.val();
+            console.log(data); // Display exchange rates on the website
+            });
+
+        // pergjegjese per cors netdania
+
+        window.onload = function() {
+        if (typeof NetDania !== "undefined" && NetDania.ConnectionType) {
+            console.log(NetDania.ConnectionType);
+        } else {
+            console.error("NetDania script not loaded or ConnectionType is undefined.");
+            }
+        };
+
+        try {
+            console.log(NetDania.ConnectionType);
+            } catch (error) {
+            console.error("Error accessing ConnectionType:", error);
+            }
         
+            let connectionType = NetDania?.ConnectionType || "Unknown";
+            console.log("Connection Type:", connectionType);
+
+
     </script>
 </body>
 </html>
